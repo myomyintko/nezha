@@ -6,7 +6,7 @@ on:
       - "v*"
     branches:
       - dev
-
+  workflow_dispatch:  # 添加手动触发
 jobs:
   build:
     strategy:
