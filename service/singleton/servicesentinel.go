@@ -405,7 +405,7 @@ func (ss *ServiceSentinel) worker() {
 		css = nil
 
 		mh := r.Data
-		if mh.Type == model.TaskTypeTCPPing || mh.Type == model.TaskTypeICMPPing {
+		if mh.Type == model.TaskTypeTCPPing || mh.Type == model.TaskTypeICMPPing || mh.Type == model.TaskTypeHTTPGet {
 			serviceTcpMap, ok := ss.serviceResponsePing[mh.GetId()]
 			if !ok {
 				serviceTcpMap = make(map[uint64]*pingStore)
