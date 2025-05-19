@@ -168,6 +168,8 @@ func (ns *NotificationServerBundle) replaceParamsInString(str string, message st
 		"#DATETIME#", mod(time.Now().In(ns.Loc).String()),
 	}
 
+	fmt.Println("ns.Server", ns.Server);
+
 	if ns.Server != nil {
 		replacements = append(replacements,
 			"#SERVER.NAME#", mod(ns.Server.Name),
