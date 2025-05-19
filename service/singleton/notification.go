@@ -249,6 +249,8 @@ func (c *NotificationClass) SendNotification(notificationGroupID uint64, desc st
 		if len(ext) > 0 {
 			ns.Server = ext[0]
 		}
+		fmt.Println("ns.Server on try: ", ns.Server)
+
 		if err := ns.Send(desc); err != nil {
 			log.Printf("NEZHA>> Sending notification to %s failed: %v", n.Name, err)
 		} else {
